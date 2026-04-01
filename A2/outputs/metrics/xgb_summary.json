@@ -1,0 +1,43 @@
+{
+  "model": "XGBoost",
+  "best_config": {
+    "n_estimators": 1000,
+    "learning_rate": 0.01,
+    "max_depth": 7,
+    "subsample": 0.8,
+    "colsample_bytree": 0.8,
+    "reg_alpha": 0.1,
+    "reg_lambda": 5.0,
+    "objective": "binary:logistic",
+    "eval_metric": "logloss",
+    "random_state": 42,
+    "n_jobs": -1,
+    "tree_method": "hist",
+    "device": "cuda"
+  },
+  "best_validation_metrics": {
+    "accuracy": 0.9197649966397121,
+    "precision": 0.6055045871559633,
+    "recall": 0.017722878625134265,
+    "f1": 0.034437777198017216,
+    "auc_pr": 0.24943226737598714
+  },
+  "final_test_metrics": {
+    "accuracy": 0.9197649966397121,
+    "precision": 0.6,
+    "recall": 0.01852846401718582,
+    "f1": 0.03594686116176087,
+    "auc_pr": 0.24595067743382762
+  },
+  "final_train_time_seconds": 22.35238479999998,
+  "validation_results_path": "H:\\2026Spring\\Applied-ML\\A2\\outputs\\metrics\\xgb_validation_results.csv",
+  "figures": {
+    "train_val_logloss": "H:\\2026Spring\\Applied-ML\\A2\\figures\\xgb_train_val_logloss.png",
+    "learning_rate_comparison": "H:\\2026Spring\\Applied-ML\\A2\\figures\\xgb_learning_rate_comparison.png",
+    "feature_importance": "H:\\2026Spring\\Applied-ML\\A2\\figures\\xgb_feature_importance.png"
+  },
+  "notes": "early stopping used during validation search; XGBoost ran on GPU",
+  "best_validation_run": "regularization__colsample_bytree-0.8__device-cuda__eval_metric-logloss__learning_rate-0.01__max_depth-7__n_estimators-1000__n_jobs--1__objective-binary:logistic__random_state-42__reg_alpha-0.1__reg_lambda-5.0__subsample-0.8__tree_method-hist",
+  "best_validation_stage": "regularization",
+  "best_validation_description": "n_estimators=1000, learning_rate=0.01, max_depth=7, subsample=0.8, colsample_bytree=0.8, reg_alpha=0.1, reg_lambda=5.0, objective=binary:logistic, eval_metric=logloss, random_state=42, n_jobs=-1, tree_method=hist, device=cuda"
+}

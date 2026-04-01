@@ -1,0 +1,32 @@
+{
+  "run_name": "learning_rate__activation-relu__alpha-0.0001__batch_size-512__hidden_layer_sizes-(64,)__learning_rate_init-0.1__max_iter-50__random_state-42",
+  "stage": "learning_rate",
+  "params": {
+    "hidden_layer_sizes": [
+      64
+    ],
+    "activation": "relu",
+    "learning_rate_init": 0.1,
+    "max_iter": 50,
+    "alpha": 0.0001,
+    "batch_size": 512,
+    "random_state": 42
+  },
+  "loss_curve": [
+    0.2813075605192129,
+    0.2694022939158518,
+    0.2621061898516107,
+    0.26536896940452614,
+    0.26445721956283263,
+    0.2653498651226062,
+    0.26323152208310147,
+    0.2689678068586235,
+    0.27067072138563786,
+    0.2696041836466974,
+    0.27125559469792915,
+    0.27008597617376007,
+    0.2677982856168829,
+    0.26813713683198986
+  ],
+  "n_iter": 14
+}
