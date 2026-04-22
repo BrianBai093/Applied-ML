@@ -1,0 +1,6 @@
+group,label,learning_rate,d_model,n_layers,params,final_val_loss,final_val_ppl,runtime_sec
+learning_rate,lr=1e-3,0.001,64,2,164276,3.627093,37.603337,1.94
+learning_rate,lr=3e-4,0.0003,64,2,164276,4.059388,57.938866,1.98
+learning_rate,lr=1e-4,0.0001,64,2,164276,4.471341,87.473929,1.90
+model_size,d=64,L=2,0.0003,64,2,164276,4.059388,57.938866,2.00
+model_size,d=128,L=2,0.0003,128,2,524660,3.726137,41.518407,2.04

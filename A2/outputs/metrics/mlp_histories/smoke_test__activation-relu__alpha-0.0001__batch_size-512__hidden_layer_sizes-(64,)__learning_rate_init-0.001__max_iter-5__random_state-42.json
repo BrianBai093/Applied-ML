@@ -1,0 +1,23 @@
+{
+  "run_name": "smoke_test__activation-relu__alpha-0.0001__batch_size-512__hidden_layer_sizes-(64,)__learning_rate_init-0.001__max_iter-5__random_state-42",
+  "stage": "smoke_test",
+  "params": {
+    "hidden_layer_sizes": [
+      64
+    ],
+    "activation": "relu",
+    "learning_rate_init": 0.001,
+    "max_iter": 5,
+    "alpha": 0.0001,
+    "batch_size": 512,
+    "random_state": 42
+  },
+  "loss_curve": [
+    0.522521247869726,
+    0.3306169866336278,
+    0.28049992807138724,
+    0.2657882049052811,
+    0.25817774564443813
+  ],
+  "n_iter": 5
+}
