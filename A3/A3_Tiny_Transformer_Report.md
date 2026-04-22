@@ -14,29 +14,13 @@ The dataset was the Tiny Shakespeare corpus, containing 1,115,394 characters of 
 
 A custom subword-level BPE tokenizer was trained with a vocabulary size of 500, matching the assignment constraint. The full corpus was encoded into 641,904 tokens, giving a compression ratio of 1.74 characters per token. The token stream was then split into overlapping sequences of length 64, where the input is the first 64 tokens and the target is the same sequence shifted by one position. Following the assignment instructions, 80% of the tokens were used for training and 20% for validation, with no separate test set.
 
-| Quantity | Value |
-|---|---:|
-| Corpus size | 1,115,394 characters |
-| Vocabulary size | 500 |
-| Encoded corpus length | 641,904 tokens |
-| Context length | 64 tokens |
-| Training tokens | 513,523 |
-| Validation tokens | 128,381 |
+Key dataset statistics: corpus size 1,115,394 characters; vocabulary size 500; encoded corpus length 641,904 tokens; context length 64 tokens; training tokens 513,523; validation tokens 128,381.
 
 ## 3. Model Architecture
 
 The model is a small causal Transformer language model. Input token IDs are mapped with `nn.Embedding`, combined with sinusoidal positional encodings, processed by two Transformer blocks, and projected back to the vocabulary to predict the next token. Each block uses RMSNorm, causal multi-head self-attention, residual connections, and a feed-forward network.
 
-| Component | Setting |
-|---|---:|
-| Number of Transformer blocks | 2 |
-| Hidden size | 64 |
-| Attention heads | 4 |
-| Feed-forward expansion | 4x |
-| Dropout | 0.10 |
-| Positional encoding | Sinusoidal |
-| Normalization | RMSNorm |
-| Parameters | 164,276 |
+The final configuration used 2 Transformer blocks, hidden size 64, 4 attention heads, 4x feed-forward expansion, dropout 0.10, sinusoidal positional encoding, RMSNorm, and 164,276 trainable parameters.
 
 ![Model architecture](model_architecture.png)
 
@@ -58,13 +42,7 @@ The main run used a learning rate of `3e-4`, batch size 32, context length 64, a
 
 The model learned steadily across five epochs. Training loss fell from 4.9081 to 3.6103, validation loss fell from 4.2864 to 3.5760, and the final validation perplexity reached 35.73.
 
-| Epoch | Train Loss | Validation Loss | Validation PPL |
-|---:|---:|---:|---:|
-| 1 | 4.9081 | 4.2864 | 72.70 |
-| 2 | 4.1931 | 3.9886 | 53.98 |
-| 3 | 3.9235 | 3.7818 | 43.90 |
-| 4 | 3.7314 | 3.6629 | 38.97 |
-| 5 | 3.6103 | 3.5760 | 35.73 |
+Per-epoch metrics (train loss / validation loss / validation PPL) were: E1 4.9081 / 4.2864 / 72.70; E2 4.1931 / 3.9886 / 53.98; E3 3.9235 / 3.7818 / 43.90; E4 3.7314 / 3.6629 / 38.97; E5 3.6103 / 3.5760 / 35.73.
 
 ![Training and validation loss](loss_curves.png)
 
